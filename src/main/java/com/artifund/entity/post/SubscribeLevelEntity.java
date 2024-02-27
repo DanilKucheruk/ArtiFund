@@ -1,5 +1,6 @@
 package com.artifund.entity.post;
 
+import java.math.BigDecimal;
 
 import com.artifund.entity.user.UserEntity;
 
@@ -16,16 +17,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="subscribe")
+@Table(name="subscribe_level")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SubscribeEntity {
+public class SubscribeLevelEntity {
     @Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
-	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.REFRESH)
-	private UserEntity subscribe; 
-	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.REFRESH)
-	private UserEntity subscription;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
+    private String title;
+    private String description;
+    private BigDecimal cost;
+    @ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.REFRESH)
+	private UserEntity author;
 }
