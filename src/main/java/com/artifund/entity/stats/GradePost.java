@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 public class GradePost {
     @Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long gradeId;
+	private Long id;
 	@ManyToOne(cascade=CascadeType.REFRESH, fetch=FetchType.LAZY)
 	private UserEntity user;
 	@ManyToOne(cascade=CascadeType.REFRESH, fetch=FetchType.LAZY)

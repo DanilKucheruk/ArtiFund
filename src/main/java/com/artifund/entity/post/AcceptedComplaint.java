@@ -30,10 +30,10 @@ public class AcceptedComplaint {
 	@Enumerated(value=EnumType.STRING)
 	private ReasonPost reason;
 	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.REFRESH)
-	private PostEntity video;
+	private PostEntity post;
 	private LocalDateTime createdAt = LocalDateTime.now();
 	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.REFRESH)
-	private UserEntity authorVideo;
+	private UserEntity authorPost;
 	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.REFRESH)
 	private UserEntity complaintUser;
 }

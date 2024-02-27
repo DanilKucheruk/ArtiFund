@@ -56,5 +56,5 @@ public class PostEntity {
 	@OneToMany(mappedBy="post", cascade=CascadeType.REMOVE, fetch=FetchType.LAZY)
 	private List<CommentEntity> comments = new LinkedList<>();
     @ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.REFRESH)
-    private SubscribeLevelEntity subscribeLevel;
+    private SubscribeLevelEntity level;
 }

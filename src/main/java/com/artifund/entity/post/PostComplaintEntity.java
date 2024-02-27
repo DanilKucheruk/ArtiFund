@@ -34,7 +34,7 @@ public class PostComplaintEntity {
 	@Enumerated(value = EnumType.STRING)
 	private ReasonPost reason;
 	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.REFRESH)
-	private PostEntity video;
+	private PostEntity post;
 	@Enumerated(value = EnumType.STRING)
 	private PostComplaintStatus status = PostComplaintStatus.CONSIDERATION;
 }
